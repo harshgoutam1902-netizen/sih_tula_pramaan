@@ -1,0 +1,232 @@
+# OIML R 76-2:2006 Test Applicability Matrix
+# Source: International Recommendation R 76-2, Edition 2006 (E)
+# Annexes A (Performance tests) and B (Environmental tests)
+
+version: "R76-1:2006"
+
+# WARNING: All tests marked with "VERIFY" require metrologist review against
+# full annex text before production deployment.
+
+tests:
+  # ========== Core Performance Tests (Annex A.4) ==========
+
+  - id: "1"
+    name: "Weighing performance"
+    clause_ref: "A.4.4 / A.5.3.1"
+    applies_if: "always"
+    sequence: 1
+    duration_category: "short"
+    note: "Fundamental test - applies to all instruments"
+
+  - id: "2"
+    name: "Temperature effect on no-load indication"
+    clause_ref: "A.5.3.2"
+    applies_if: "electronic == True"
+    sequence: 2
+    duration_category: "short"
+    note: "Electronic-specific - part of temperature test suite"
+
+  - id: "3.1"
+    name: "Eccentricity using weights"
+    clause_ref: "A.4.7.1-3"
+    applies_if: "always"
+    sequence: 3
+    duration_category: "short"
+    note: "Standard eccentric load test"
+
+  - id: "3.2"
+    name: "Eccentricity using a rolling load"
+    clause_ref: "A.4.7.4"
+    applies_if: "VERIFY"  # TODO: Confirm geometry/size dependencies from A.4.7.4
+    sequence: 4
+    duration_category: "short"
+    note: "VERIFY applicability conditions against A.4.7.4 full text"
+
+  - id: "4.1"
+    name: "Discrimination"
+    clause_ref: "A.4.8"
+    applies_if: "always"
+    variant_by: "indication_type"  # Picks digital / analogue / non_self_indicating sub-form
+    sequence: 5
+    duration_category: "short"
+    note: "Variant test - renders only resolved sub-form"
+
+  - id: "4.2"
+    name: "Sensitivity"
+    clause_ref: "A.4.9"
+    applies_if: "self_indicating_type == 'non_self_indicating'"
+    sequence: 6
+    duration_category: "short"
+    note: "Non-self-indicating instruments only (confirmed in R76-2)"
+
+  - id: "5"
+    name: "Repeatability"
+    clause_ref: "A.4.10"
+    applies_if: "always"
+    sequence: 7
+    duration_category: "short"
+    note: "Standard repeatability test at Max"
+
+  - id: "6.1"
+    name: "Zero return"
+    clause_ref: "A.4.11.2"
+    applies_if: "always"
+    sequence: 8
+    duration_category: "short"
+    note: "Zero indication stability after loading/unloading"
+
+  - id: "6.2"
+    name: "Creep"
+    clause_ref: "A.4.11.1"
+    applies_if: "always"
+    sequence: 9
+    duration_category: "time_spanning"
+    note: "Time-spanning test - runs up to 4 hours"
+
+  - id: "7"
+    name: "Stability of equilibrium"
+    clause_ref: "A.4.12"
+    applies_if: "always"
+    sequence: 10
+    duration_category: "short"
+    note: "Load removal stability check"
+
+  # ========== Environmental Tests (Annex A.5 / B) ==========
+
+  - id: "8"
+    name: "Tilting"
+    clause_ref: "A.5.1"
+    applies_if: "class_ in ['II', 'III', 'IIII']"
+    variant_by: "class_"  # Class I has different procedure
+    sequence: 11
+    duration_category: "short"
+    note: "VERIFY: Class I variant uses level indicator limit, not standard tilt test"
+
+  - id: "9"
+    name: "Tare (weighing test)"
+    clause_ref: "A.4.6.1"
+    applies_if: "has_tare_device == True"
+    sequence: 12
+    duration_category: "short"
+    note: "Only if tare device fitted"
+
+  - id: "10"
+    name: "Warm-up time"
+    clause_ref: "A.5.2 / 5.3.5"
+    applies_if: "electronic == True"
+    sequence: 13
+    duration_category: "time_spanning"
+    note: "Electronic instruments only - stabilization period"
+
+  - id: "11"
+    name: "Variations of voltage"
+    clause_ref: "A.5.4"
+    applies_if: "electronic == True"
+    sequence: 14
+    duration_category: "short"
+    note: "Power supply variation test (Annex 5 = electronic instruments)"
+
+  # ========== EMC Tests (Annex B.3) ==========
+
+  - id: "12.1"
+    name: "Short time power reductions"
+    clause_ref: "B.3.1"
+    applies_if: "electronic == True"
+    sequence: 15
+    duration_category: "short"
+    note: "EMC test - power dips and interruptions"
+
+  - id: "12.2"
+    name: "Electrical bursts"
+    clause_ref: "B.3.2"
+    applies_if: "electronic == True"
+    sequence: 16
+    duration_category: "short"
+    note: "EMC test - transient burst immunity"
+
+  - id: "12.3"
+    name: "Electrostatic discharges"
+    clause_ref: "B.3.3"
+    applies_if: "electronic == True"
+    sequence: 17
+    duration_category: "short"
+    note: "EMC test - ESD immunity"
+
+  - id: "12.4"
+    name: "Immunity to radiated electromagnetic fields"
+    clause_ref: "B.3.4/B.3.5"
+    applies_if: "electronic == True"
+    sequence: 18
+    duration_category: "short"
+    note: "EMC test - RF immunity"
+
+  # ========== Climate Tests (Annex B.2) ==========
+
+  - id: "13"
+    name: "Damp heat, steady state"
+    clause_ref: "B.2.2"
+    applies_if: "electronic == True"
+    sequence: 19
+    duration_category: "time_spanning"
+    note: "Climate test - requires environmental chamber, multi-day test"
+
+  - id: "14"
+    name: "Span stability"
+    clause_ref: "B.4"
+    applies_if: "VERIFY"  # TODO: Appears in Annex B with other electronic tests - confirm
+    sequence: 20
+    duration_category: "time_spanning"
+    note: "VERIFY applicability - likely electronic only but confirm against B.4"
+
+  # ========== Durability Test (Annex A.6) ==========
+
+  - id: "15"
+    name: "Endurance"
+    clause_ref: "A.6"
+    applies_if: "always"
+    sequence: 21
+    duration_category: "time_spanning"
+    note: "Load cycle test - multi-session, can span days"
+
+  # ========== Construction & Compliance Checklists ==========
+
+  - id: "16"
+    name: "Examination of the construction"
+    clause_ref: "n/a"
+    applies_if: "always"
+    sequence: 22
+    duration_category: "short"
+    note: "Visual and mechanical inspection"
+
+  - id: "17.1"
+    name: "Checklist — all types except non-self-indicating"
+    clause_ref: "Various"
+    applies_if: "self_indicating_type != 'non_self_indicating'"
+    sequence: 23
+    duration_category: "short"
+    note: "Marking, sealing, documentation requirements"
+
+  - id: "17.2"
+    name: "Checklist — direct sales / price-computing / labelling"
+    clause_ref: "Various"
+    applies_if: "intended_use in ['direct_sales', 'price_computing', 'labelling']"
+    sequence: 24
+    duration_category: "short"
+    note: "Additional requirements for consumer-facing instruments"
+
+  - id: "17.3"
+    name: "Checklist — electronic weighing instruments"
+    clause_ref: "Various"
+    applies_if: "electronic == True"
+    sequence: 25
+    duration_category: "short"
+    note: "Electronic-specific compliance checks"
+
+# Notes on condition evaluation:
+# - "always" → unconditional applicability
+# - Simple equality: "electronic == True"
+# - List membership: "class_ in ['II', 'III']"
+# - Logical operators: "electronic == True and has_tare_device == True"
+# 
+# Conditions are evaluated as Python expressions with restricted context (no builtins).
+# Invalid conditions fail safe (test not included).

@@ -1,0 +1,75 @@
+# OIML R 76-1:2006 Classification Rules
+# Source: International Recommendation R 76-1, Edition 2006 (E)
+# Section 3.2 (Table 3) - Accuracy classes
+
+version: "R76-1:2006"
+
+# Table 3: Accuracy class bands
+# Each band defines valid ranges for verification scale interval (e) and number of scale intervals (n)
+class_bands:
+  # Class I - Special accuracy
+  - class: I
+    e_min_g: 0.001
+    e_max_g: null  # No upper bound specified in standard
+    n_min: 50000
+    n_max: null    # VERIFY: Check §3.4.4 for exception clause before finalizing
+    min_capacity_factor: 100  # Min = 100 × e
+    note: "High precision instruments for laboratory use"
+
+  # Class II - High accuracy (lower e range)
+  - class: II
+    e_min_g: 0.001
+    e_max_g: 0.05
+    n_min: 100
+    n_max: 100000
+    min_capacity_factor: 20  # Min = 20 × e
+    note: "Precision commercial weighing, e ≤ 0.05g"
+
+  # Class II - High accuracy (upper e range)
+  - class: II
+    e_min_g: 0.1
+    e_max_g: null  # No upper bound for this range
+    n_min: 5000
+    n_max: 100000
+    min_capacity_factor: 50  # Min = 50 × e
+    note: "Precision commercial weighing, e ≥ 0.1g"
+
+  # Class III - Medium accuracy (lower e range)
+  - class: III
+    e_min_g: 0.1
+    e_max_g: 2
+    n_min: 100
+    n_max: 10000
+    min_capacity_factor: 20  # Min = 20 × e
+    note: "General commercial weighing, e ≤ 2g"
+
+  # Class III - Medium accuracy (upper e range)
+  - class: III
+    e_min_g: 5
+    e_max_g: null
+    n_min: 500
+    n_max: 10000
+    min_capacity_factor: 20  # Min = 20 × e
+    note: "General commercial weighing, e ≥ 5g"
+
+  # Class IIII - Ordinary accuracy
+  - class: IIII
+    e_min_g: 5
+    e_max_g: null
+    n_min: 100
+    n_max: 1000
+    min_capacity_factor: 10  # Min = 10 × e
+    note: "Coarse weighing applications"
+
+# Table 4: Multi-interval instruments - partial range ratios
+# For each partial range i (except the last): Max_i / e_(i+1) must be ≥ the value below
+multi_interval_ratios:
+  I: 50000
+  II: 5000
+  III: 500
+  IIII: 50
+
+# Special application note (§3.2):
+# Instruments may span Class I/II or Class II/III boundaries for special applications.
+# These cases must surface as AMBIGUOUS status requiring human confirmation.
+special_application_allowed: true

@@ -1,0 +1,103 @@
+# DRAFT: These are paraphrased summaries, not the official OIML R76-1:2006 text.
+# For certification purposes, consult the official standard.
+
+clauses:
+  - id: "3.1.1"
+    source: "OIML R76-1:2006 Section 3.1.1"
+    text: "Accuracy class indicates the metrological requirements the instrument must satisfy. Classes are designated I, II, III, and IIII in order of decreasing accuracy."
+    tags: ["accuracy_class", "classification"]
+
+  - id: "3.1.2"
+    source: "OIML R76-1:2006 Section 3.1.2"
+    text: "The verification scale interval e is the value expressed in units of mass used for classification and verification of the instrument. The number of verification scale intervals n equals Max divided by e."
+    tags: ["verification_scale_interval", "e", "n", "classification"]
+
+  - id: "3.4.1"
+    source: "OIML R76-1:2006 Table 3"
+    text: "Class I instruments require e greater than or equal to 0.001 grams and n greater than or equal to 50000. Used for precision balances in laboratory settings."
+    tags: ["class_I", "table_3", "classification"]
+
+  - id: "3.4.2"
+    source: "OIML R76-1:2006 Table 3"
+    text: "Class II instruments have two bands: e between 0.001 and 0.05 grams with n between 100 and 100000, or e greater than or equal to 0.1 grams with n between 5000 and 100000. Used for precision weighing in trade."
+    tags: ["class_II", "table_3", "classification"]
+
+  - id: "3.4.3"
+    source: "OIML R76-1:2006 Table 3"
+    text: "Class III instruments have two bands: e between 0.1 and 2 grams with n between 100 and 10000, or e greater than or equal to 5 grams with n between 500 and 10000. Most common for commercial weighing."
+    tags: ["class_III", "table_3", "classification"]
+
+  - id: "3.4.4"
+    source: "OIML R76-1:2006 Table 3"
+    text: "Class IIII instruments require e greater than or equal to 5 grams with n between 100 and 1000. Used for rough industrial weighing applications."
+    tags: ["class_IIII", "table_3", "classification"]
+
+  - id: "3.5.1"
+    source: "OIML R76-1:2006 Section 3.5"
+    text: "Maximum permissible error at initial verification varies by class and load. For Class I the MPE is plus or minus 0.5e up to 50000e, then 1.0e up to 200000e. Class II uses 0.5e up to 5000e, 1.0e up to 20000e, then 1.5e beyond."
+    tags: ["MPE", "initial_verification", "tolerance"]
+
+  - id: "3.5.2"
+    source: "OIML R76-1:2006 Section 3.5"
+    text: "Maximum permissible error for Class III is 0.5e up to 500e, 1.0e up to 2000e, then 1.5e beyond. Class IIII uses 1.0e up to 500e, then 1.5e beyond that range."
+    tags: ["MPE", "initial_verification", "class_III", "class_IIII", "tolerance"]
+
+  - id: "4.1.1"
+    source: "OIML R76-1:2006 Section 4.1"
+    text: "Environmental conditions during testing must be recorded including temperature in degrees Celsius, relative humidity as percentage, and barometric pressure in kilopascals. Ambient temperature should be between 15 and 30 degrees Celsius."
+    tags: ["environment", "temperature", "humidity", "pressure", "test_conditions"]
+
+  - id: "4.2.1"
+    source: "OIML R76-1:2006 Section 4.2"
+    text: "Repeatability testing requires at least six identical load applications at the same load point. The difference between maximum and minimum readings must not exceed the MPE for that load."
+    tags: ["repeatability", "test", "short"]
+
+  - id: "4.3.1"
+    source: "OIML R76-1:2006 Section 4.3"
+    text: "Eccentric loading test evaluates performance when loads are placed off-center. Test loads equal to one-third maximum capacity are placed at specified positions on the load receptor. Errors must not exceed MPE."
+    tags: ["eccentric_loading", "test", "short"]
+
+  - id: "4.4.1"
+    source: "OIML R76-1:2006 Section 4.4"
+    text: "Discrimination test verifies the instrument responds to small load changes. A supplemental load equal to 1.4 times the verification interval is added and removed, and the indication must change accordingly."
+    tags: ["discrimination", "sensitivity", "test", "short"]
+
+  - id: "4.5.1"
+    source: "OIML R76-1:2006 Section 4.5"
+    text: "Tare devices must be tested separately if present. The weighing performance must meet MPE requirements with tare applied at various load points across the weighing range."
+    tags: ["tare", "test", "short"]
+
+  - id: "4.6.1"
+    source: "OIML R76-1:2006 Section 4.6"
+    text: "For non-self-indicating instruments, sensitivity testing confirms that balance points can be determined to the required precision. The instrument must show detectable movement for load changes of one verification interval."
+    tags: ["sensitivity", "non_self_indicating", "test", "short"]
+
+  - id: "4.7.1"
+    source: "OIML R76-1:2006 Section 4.7"
+    text: "Creep test is time-dependent and evaluates indication stability under constant load. The instrument is loaded to maximum capacity for one hour, and indication drift must not exceed MPE."
+    tags: ["creep", "time_spanning", "test", "stability"]
+
+  - id: "4.8.1"
+    source: "OIML R76-1:2006 Section 4.8"
+    text: "Warm-up time testing applies to electronic instruments. The instrument is tested at specified intervals after power-on until indications stabilize within MPE requirements."
+    tags: ["warm_up", "electronic", "time_spanning", "test"]
+
+  - id: "4.9.1"
+    source: "OIML R76-1:2006 Section 4.9"
+    text: "Span stability test evaluates long-term drift over a 24-hour period. The instrument is loaded and unloaded at regular intervals and indication changes must remain within MPE."
+    tags: ["span_stability", "time_spanning", "test", "stability"]
+
+  - id: "4.10.1"
+    source: "OIML R76-1:2006 Section 4.10"
+    text: "Electronic instruments must undergo environmental testing including damp heat cyclic conditions. The instrument is subjected to temperature and humidity cycles per specified profiles."
+    tags: ["damp_heat", "electronic", "time_spanning", "test", "environmental"]
+
+  - id: "4.10.2"
+    source: "OIML R76-1:2006 Section 4.10"
+    text: "Dry heat and cold tests verify electronic instrument performance at temperature extremes. Instruments are stabilized at high and low temperature limits then tested for MPE compliance."
+    tags: ["dry_heat", "cold", "electronic", "time_spanning", "test", "environmental"]
+
+  - id: "4.11.1"
+    source: "OIML R76-1:2006 Section 4.11"
+    text: "Electronic instruments must be tested for mains voltage variation. The supply voltage is varied between 85 and 110 percent of nominal and the instrument must maintain MPE compliance throughout."
+    tags: ["mains_voltage", "electronic", "test", "short"]

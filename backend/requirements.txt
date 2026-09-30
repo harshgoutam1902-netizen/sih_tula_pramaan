@@ -1,0 +1,88 @@
+# ============================================
+# TulaPramaan Backend Dependencies
+# Python 3.11+
+# ============================================
+
+# ========== Core Framework ==========
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# ========== Database ==========
+sqlalchemy==2.0.23
+alembic==1.13.0
+psycopg2-binary==2.9.9  # PostgreSQL adapter
+asyncpg==0.29.0  # Async PostgreSQL
+
+# ========== Authentication & Security ==========
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+bcrypt==4.1.1
+
+# ========== Data Validation & Parsing ==========
+pyyaml==6.0.1
+python-dotenv==1.0.0
+email-validator==2.1.0
+
+# ========== Testing ==========
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+pytest-xdist==3.5.0
+hypothesis==6.92.1  # Property-based testing
+faker==20.1.0  # Test data generation
+httpx==0.25.2  # Async HTTP client for testing
+
+# ========== Code Quality ==========
+black==23.12.0
+flake8==6.1.0
+mypy==1.7.1
+isort==5.13.2
+pylint==3.0.3
+
+# ========== Logging & Monitoring ==========
+python-json-logger==2.0.7
+sentry-sdk[fastapi]==1.39.1  # Error tracking
+
+# ========== AI/LLM Integration ==========
+openai==1.6.1
+anthropic==0.8.1  # Claude API (optional)
+pillow==10.1.0  # Image processing for OCR
+pdf2image==1.16.3  # PDF to image conversion
+
+# ========== Report Generation ==========
+jinja2==3.1.2
+weasyprint==60.1  # HTML to PDF
+python-docx==1.1.0  # Word document generation
+openpyxl==3.1.2  # Excel generation
+reportlab==4.0.7  # PDF generation
+
+# ========== Caching (Optional) ==========
+redis==5.0.1
+hiredis==2.2.3
+
+# ========== HTTP & API ==========
+requests==2.31.0
+aiohttp==3.9.1
+httptools==0.6.1
+
+# ========== Date & Time ==========
+python-dateutil==2.8.2
+pytz==2023.3
+
+# ========== Utilities ==========
+click==8.1.7  # CLI tool building
+tqdm==4.66.1  # Progress bars
+colorama==0.4.6  # Colored terminal output
+
+# ========== Type Checking ==========
+types-PyYAML==6.0.12.12
+types-requests==2.31.0.10
+types-python-dateutil==2.8.19.14
+
+# ============================================
+# Development Dependencies (install separately)
+# pip install -r requirements-dev.txt
+# ============================================
