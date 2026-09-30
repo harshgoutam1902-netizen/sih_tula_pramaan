@@ -111,3 +111,6 @@ temp/
 tmp/
 
 .venv/
+
+.kiro/
+.vscode/
